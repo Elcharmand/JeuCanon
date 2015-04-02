@@ -16,7 +16,7 @@ public class Fenetre extends JFrame {
         setSize((int)dimensionUtile.getWidth(),(int)dimensionUtile.getHeight());
         setResizable(false);
         setAlwaysOnTop(true);
-       // setIconImage(new ImageIcon(getClass().getResource("picture/icon.gif")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("picture/icon.gif")).getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
