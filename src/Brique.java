@@ -1,3 +1,5 @@
+
+
 public class Brique extends Objet {
     private int hauteur; 
     private int largeur; 
