@@ -3,22 +3,27 @@ import java.awt.*;
 
 public class Fenetre extends JFrame {
     
-    //Attributs
+    /**Attributs**/
     
     
-    //Constructeur
+    /**Constructeur**/
     public Fenetre (String nom) {
         super(nom);
         
-        //récupération de la dimension réelle de l'écran
+        //récupération de la dimension réelle de l'écran et paramétrage des dimensions
         Dimension dimensionUtile = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        
-        //paramétrage de la dimension
         setSize((int)dimensionUtile.getWidth(),(int)dimensionUtile.getHeight());
         setResizable(false);
-        setAlwaysOnTop(true);
-        //paramétrage de l'icone de la fenetre
-        setIconImage(new ImageIcon(getClass().getResource("picture/icon.gif")).getImage());
+        
+        //paramétrage (et test) de l'icone et des caractéristiques de la fenetre
+        try {
+        	setIconImage(new ImageIcon(getClass().getResource("picture/icon.gif")).getImage());
+        } catch (NullPointerException Exp) {}
+        
+        //création d'un JPanel et définition du ContentPane
+        setContentPane(new Panneau());
+        
+        //paramétrages des opérations primaires
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
