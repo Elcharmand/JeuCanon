@@ -11,24 +11,35 @@ public class Fenetre extends JFrame {
         super(nom);
         
         //récupération de la dimension réelle de l'écran et paramétrage des dimensions
-        Dimension dimensionUtile = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setSize((int)dimensionUtile.getWidth(),(int)dimensionUtile.getHeight());
+        Dimension dimEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setSize((int)dimEcran.getWidth(),(int)dimEcran.getHeight());
         setResizable(false);
+        
+        //création d'une ouleur et paramétrage de la couleur de fond
+        Color sky = new Color(27, 94, 161);
+        setBackground(sky);
         
         //paramétrage (et test) de l'icone et des caractéristiques de la fenetre
         try {
         	setIconImage(new ImageIcon(getClass().getResource("picture/icon.gif")).getImage());
-        } catch (NullPointerException Exp) {}
+        } catch (NullPointerException e) {}
         
-        //création d'un JPanel et définition du ContentPane
-        setContentPane(new Panneau());
+        //Instanciation des objets Panneau et Barre
+        Panneau panneau = new Panneau();
+        Barre barre = new Barre();
         
-        //paramétrages des opérations primaires
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        //création du JPanel définissant le ContentPane
+        JPanel cttpane = new JPanel();
+        cttpane.setLayout(new BorderLayout());
+        cttpane.add(barre,BorderLayout.SOUTH);
+        cttpane.add(panneau,BorderLayout.CENTER);
+        
+        this.setContentPane(cttpane);
+        
+        
         setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public static void main(String[] args) {
-        Fenetre fenetre = new Fenetre("Canon Crash");
-    }
 }
