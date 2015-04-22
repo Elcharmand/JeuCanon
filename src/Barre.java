@@ -17,6 +17,8 @@ public class Barre extends JPanel {
 		g.setColor(Color.black);
 		g.drawString("Barre (zone d'affichage des boutons)", 50, 100);
 		
+		//test
+		
 	}
 	
 	
