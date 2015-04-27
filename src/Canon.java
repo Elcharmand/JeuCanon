@@ -1,18 +1,18 @@
 public class Canon extends Objet{
-    private double vitesse; 
     private double angle; 
     
-    public Canon(double X, double Y, boolean actif,double vitesse, double angle){
-        super(X,Y,true);
-        this.vitesse=vitesse; 
+    public Canon(double X, double Y, boolean actif,float vitesse, double angle){
+        // Attention le nom de l'image du canon doit être appellée "Canon". 
+        super (X,Y,true,vitesse,"Canon");
         this.angle=angle; 
     }
     
+    //Permet de donner l'angle 
     public void setAngle (double angle){
         this.angle=angle; 
     }
-    
-    public void setVitesse (double vitesse){
+    // Permet de donner la vitesse 
+    public void setVitesse (float vitesse){
         this.vitesse=vitesse; 
     }
     
@@ -23,3 +23,4 @@ public class Canon extends Objet{
         return vitesse;
     }
 }
+
