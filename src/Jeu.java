@@ -26,7 +26,7 @@ public class Jeu {
         // On crée le boulet : X, Y, actif , masse en kg, rayon en pixel 
         boulet = new Boulet(0,0,true, 10, 10);      
         // On crée le canon : X Y, actif, vitesse, angle
-        canon = new Canon (0,0, true, 10, 45);
+        canon = new Canon (0,0, 10, 45);
         finJeu= false; 
     }
     
