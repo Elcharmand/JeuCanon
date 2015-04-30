@@ -3,7 +3,7 @@ public class Boulet extends Objet {
     private double rayon;
     
     public Boulet (double X,double Y, boolean actif, double poids,double rayon){
-        super(X,Y,actif);
+        super(X,Y,actif, 0, "Boulet.png");
             this.poids=poids;
             this.rayon=rayon;
     }
