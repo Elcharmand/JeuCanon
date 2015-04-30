@@ -1,7 +1,7 @@
 public class Canon extends Objet{
     private double angle; 
     
-    public Canon(double X, double Y, boolean actif,float vitesse, double angle){
+    public Canon(double X, double Y, float vitesse, double angle){
         // Attention le nom de l'image du canon doit être appellée "Canon". 
         super (X,Y,true,vitesse,"Canon");
         this.angle=angle; 
