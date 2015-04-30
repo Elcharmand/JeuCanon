@@ -5,21 +5,23 @@ public class Fenetre extends JFrame {
     
     /**Attributs**/
     
+    //test
+    
     
     /**Constructeur**/
     public Fenetre (String nom) {
         super(nom);
         
-        //récupération de la dimension réelle de l'écran et paramétrage des dimensions
+        //rÃ©cupÃ©ration de la dimension rÃ©elle de l'Ã©cran et paramÃ©trage des dimensions
         Dimension dimEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         setSize((int)dimEcran.getWidth(),(int)dimEcran.getHeight());
         setResizable(false);
         
-        //création d'une ouleur et paramétrage de la couleur de fond
+        //crÃ©ation d'une ouleur et paramÃ©trage de la couleur de fond
         Color sky = new Color(27, 94, 161);
         setBackground(sky);
         
-        //paramétrage (et test) de l'icone et des caractéristiques de la fenetre
+        //paramÃ©trage (et test) de l'icone et des caractÃ©ristiques de la fenetre
         try {
         	setIconImage(new ImageIcon(getClass().getResource("picture/icon.gif")).getImage());
         } catch (NullPointerException e) {}
@@ -29,7 +31,7 @@ public class Fenetre extends JFrame {
         Barre barre = new Barre();
         
         
-        //création du JPanel définissant le ContentPane
+        //crÃ©ation du JPanel dÃ©finissant le ContentPane
         JPanel cttpane = new JPanel();
         cttpane.setLayout(new BorderLayout());
         cttpane.add(barre,BorderLayout.SOUTH);
