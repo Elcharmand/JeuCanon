@@ -1,15 +1,22 @@
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
-import javax.swing.Timer;
+import javax.swing.*;
 
-public class Jeu {
+public class Jeu extends JFrame {
+	
+	/**Attributs**/
+	
     private Timer timer; 
-    private long temps; 
-    private Fenetre fenetreJeu; 
-    private Canon canon; 
-    private Boulet boulet; 
-    private boolean finJeu; 
+    private long temps;
+    private Canon canon;
+    private Boulet boulet;
+    
+    private BufferedImage ArrierePlan;
+    public Graphics buffer;
+    public boolean ToucheHaut, ToucheBas, ToucheGauche, ToucheDroit, ToucheEspace;
+    public Rectangle Ecran;
+    private boolean finJeu;
     
     
     public Jeu(){

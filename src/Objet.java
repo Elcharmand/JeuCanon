@@ -1,31 +1,36 @@
-import java.awt.Image;
-import java.awt.geom.Point2D;
-import java.awt.geom.Point2D.Double;
-
+import java.awt.*;
 import java.io.File;
 
 import javax.imageio.ImageIO;
 
 public abstract class Objet {
-    private double X; 
+    
+	/**Attibuts**/
+	private double X; 
     private double Y; 
     private boolean actif;
     public Image image;
     public float vitesse;
-// Constructeur 
+    
+    
+    
+    /**Constructeur**/ 
     public Objet(double X, double Y, boolean actif, float vitesse, String NomImage) {
         this.X=X; 
         this.Y=Y;
         this.vitesse = vitesse;
         this.actif = actif;
-        // RÃ©cupÃ©rer l'image de l'objet 
+        // Récupérer l'image de l'objet 
         try {
             image = ImageIO.read(new File(NomImage));
         } catch (Exception err) {
             System.out.println("Image introuvable !");
         }
     }
-    // MÃ©thode draw pour pouvoir dessiner les objets plus tard
+    
+    
+    
+    	/**Méthode draw pour pouvoir dessiner les objets plus tard**/
         public void draw (Graphics g){
     	g.drawImage(image,(int)X,(int)Y,null);
     }
