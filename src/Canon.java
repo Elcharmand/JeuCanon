@@ -32,5 +32,26 @@ public class Canon extends Objet{
         this.vitesse=vitesse; 
     }
     
+    //Gestion du draw du canon 
+    public void draw (Graphics g){
+    	//g.drawImage(image,(int)X,(int)Y,null);
+    	// TEST
+   	 // The required drawing location
+   	    int drawLocationX = 10;
+   	    int drawLocationY = 600;
+
+   	    // Rotation information
+
+   	    double rotationRequired = Math.toRadians(angle);
+   	    double locationX = image.getWidth(null) / 2;
+   	    double locationY = image.getHeight(null) / 2;
+   	    AffineTransform tx = AffineTransform.getRotateInstance(rotationRequired, locationX, locationY);
+   	    AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
+
+   	    // Drawing the rotated image at the required drawing locations
+   	    g.drawImage(op.filter((BufferedImage) image, null), drawLocationX, drawLocationY, null);
+   	    // FIN TEST 
+    }
+    
 }
 
