@@ -34,24 +34,24 @@ public class Canon extends Objet{
     
     //Gestion du draw du canon 
     public void draw (Graphics g){
-    	//g.drawImage(image,(int)X,(int)Y,null);
-    	// TEST
+     // Gestion de l'angle du canon 
    	 // The required drawing location
    	    int drawLocationX = 10;
    	    int drawLocationY = 600;
 
    	    // Rotation information
 
-   	    double rotationRequired = Math.toRadians(angle);
+   	    double rotationRequired = Math.toRadians(-angle); // On rotationne en fonction de "angle" qui est un attribut de canon.
    	    double locationX = image.getWidth(null) / 2;
    	    double locationY = image.getHeight(null) / 2;
    	    AffineTransform tx = AffineTransform.getRotateInstance(rotationRequired, locationX, locationY);
    	    AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
 
-   	    // Drawing the rotated image at the required drawing locations
+   	    // Drawing the rotated image at the required drawing locations 
+   	    // On dessine le canon 
    	    g.drawImage(op.filter((BufferedImage) image, null), drawLocationX, drawLocationY, null);
-   	    // FIN TEST 
     }
+    
     
 }
 
