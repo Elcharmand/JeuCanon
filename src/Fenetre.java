@@ -5,7 +5,7 @@ public class Fenetre extends JFrame {
     
     /**Attributs**/
     
-    //test
+    /**test**/
     
     
     /**Constructeur**/
