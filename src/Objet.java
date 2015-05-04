@@ -25,5 +25,9 @@ public abstract class Objet {
             System.out.println("Image introuvable !");
         }
     }
+    // Méthode draw pour pouvoir dessiner les objets plus tard
+        public void draw (Graphics g){
+    	g.drawImage(image,(int)X,(int)Y,null);
+    }
 }
 
