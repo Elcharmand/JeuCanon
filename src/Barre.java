@@ -1,5 +1,4 @@
 import java.awt.*;
-
 import javax.swing.*;
 
 import java.awt.BorderLayout;
@@ -99,7 +98,6 @@ public class Barre extends JPanel {
           force.addItem("100");
 
 
-        //ajouter un gridLayout (5,2) pour mieux placer les éléments ? puis le faire bouffer par le jpanel 
           JPanel top = new JPanel(); //création d’un panel dans lequel on va mettre tout ce qui concerne les sélections/choix de l’utilisateur
           top.add(ventlabel); //on ajoute tous les labels et combobox dans le jpanel
           top.add(vent);
@@ -113,7 +111,7 @@ public class Barre extends JPanel {
           top.add(force);
           
           
-          this.add(top, BorderLayout.NORTH); //pour faire apparaître dans le container le JPanel nommé “top” en haut du container //Armand tu peux ajouter ton autre code dans un autre container normalement et tout mettre dans un jpanel que tu mettras “south” 
+          this.add(top); //pour faire apparaître dans le container le JPanel nommé “top” en haut du container //Armand tu peux ajouter ton autre code dans un autre container normalement et tout mettre dans un jpanel que tu mettras “south” 
           this.setVisible(true);     //pour rendre le truc visible  //normalement déjà mise    
     }
     
@@ -122,7 +120,6 @@ public class Barre extends JPanel {
         g.setFont(font);
         g.setColor(Color.black);
         g.drawString("Barre (zone d'affichage des boutons)", 50, 100);
-        
         
     }
     
@@ -177,7 +174,14 @@ public class Barre extends JPanel {
     class ForceAction implements ActionListener{
       public void actionPerformed(ActionEvent choixforce) {
         System.out.println("ActionListener : force sur " + force.getSelectedItem()); //affiche la force sélectionnée
-      }               
+      }       
+      
+      
+    public static String Recupvent(){
+		valeur = (String) vent.getSelectedItem(); //ne peut fonctionner que quand on a une sélection 
+		return valeur;		
+	}
+
     }
 
     
