@@ -33,6 +33,19 @@ public class Barre extends JPanel {
     private JComboBox force = new JComboBox(); 
     private JLabel forcelabel = new JLabel("Force : (N)"); //intensité ne serait-il pas plus clair dans l’esprit des gens ??
 
+
+//pour la récupération des items sélectionnés
+	private JLabel ventchoisi; 
+	private JLabel planetechoisie; 
+	private JLabel poidschoisi; 
+	private JLabel anglechoisi; 
+	private JLabel forcechoisie;
+	
+	private String saisievent = new String();
+	private String saisieplanete = new String();
+	private String saisiepoids = new String();
+	private String saisieangle = new String();
+	private String saisieforce = new String();
     
     /**Constructeur**/
     public Barre () {
@@ -110,8 +123,21 @@ public class Barre extends JPanel {
           top.add(forcelabel);
           top.add(force);
           
+          ventchoisi = new JLabel("Vent :" + saisievent);
+          planetechoisie = new JLabel("Planète :" + saisieplanete); 
+          poidschoisi = new JLabel("Poids :" + saisiepoids);
+          anglechoisi = new JLabel("Poids :" + saisieangle); 
+          forcechoisie = new JLabel("Force :" + saisieforce);
           
+          JPanel topbis = new JPanel();
+          topbis.add(ventchoisi);
+          topbis.add(planetechoisie);
+          topbis.add(poidschoisi);
+          topbis.add(anglechoisi);
+          topbis.add(forcechoisie);
+         
           this.add(top); //pour faire apparaître dans le container le JPanel nommé “top” en haut du container //Armand tu peux ajouter ton autre code dans un autre container normalement et tout mettre dans un jpanel que tu mettras “south” 
+          this.add(topbis);
           this.setVisible(true);     //pour rendre le truc visible  //normalement déjà mise    
     }
     
@@ -154,36 +180,32 @@ public class Barre extends JPanel {
     class VentAction implements ActionListener{
       public void actionPerformed(ActionEvent choixvent) {
         System.out.println("ActionListener : vent sur " + vent.getSelectedItem()); //affiche le vent sélectionné
+        saisievent = (String) vent.getSelectedItem(); //paramétrage de la variable saisievent
       }               
     }
     class PlaneteAction implements ActionListener{
       public void actionPerformed(ActionEvent choixplanete) {
         System.out.println("ActionListener : planète sur " + planete.getSelectedItem()); //affiche la planète sélectionnée
+        saisieplanete = (String) planete.getSelectedItem();
       }               
     }
     class PoidsAction implements ActionListener{
       public void actionPerformed(ActionEvent choixpoids) {
         System.out.println("ActionListener : poids sur " + poids.getSelectedItem()); //affiche le poids sélectionné
+        saisiepoids = (String) poids.getSelectedItem();
       }               
     }
     class AngleAction implements ActionListener{
       public void actionPerformed(ActionEvent choixangle) {
         System.out.println("ActionListener : angle sur " + angle.getSelectedItem()); //affiche l’angle sélectionné
+        saisieangle = (String) angle.getSelectedItem();
       }               
     }
     class ForceAction implements ActionListener{
       public void actionPerformed(ActionEvent choixforce) {
         System.out.println("ActionListener : force sur " + force.getSelectedItem()); //affiche la force sélectionnée
+        saisieforce = (String) force.getSelectedItem();
       }       
-      
-      
-    public static String Recupvent(){
-		valeur = (String) vent.getSelectedItem(); //ne peut fonctionner que quand on a une sélection 
-		return valeur;		
-	}
-
-    }
-
     
 }
 
