@@ -22,7 +22,7 @@ public class Barre extends JPanel {
     private JLabel ventlabel = new JLabel("Vent : (m/s)"); 
     //concerne la planète 
     private JComboBox planete = new JComboBox(); 
-    private JLabel planetelabel = new JLabel("Planète :"); 
+    private JLabel planetelabel = new JLabel("Planète : "); 
     //concerne le poids
     private JComboBox poids = new JComboBox(); 
     private JLabel poidslabel = new JLabel("Poids : (kg)"); 
@@ -42,6 +42,7 @@ public class Barre extends JPanel {
 	private JLabel forcechoisie;
 	
 	private String saisievent = new String();
+	private String saisie2vent = new String();
 	private String saisieplanete = new String();
 	private String saisiepoids = new String();
 	private String saisieangle = new String();
@@ -123,11 +124,11 @@ public class Barre extends JPanel {
           top.add(forcelabel);
           top.add(force);
           
-          ventchoisi = new JLabel("Vent :" + saisievent);
-          planetechoisie = new JLabel("Planète :" + saisieplanete); 
-          poidschoisi = new JLabel("Poids :" + saisiepoids);
-          anglechoisi = new JLabel("Poids :" + saisieangle); 
-          forcechoisie = new JLabel("Force :" + saisieforce);
+          ventchoisi = new JLabel("Vent : " + saisie2vent);
+          planetechoisie = new JLabel("Planète : " + saisieplanete); 
+          poidschoisi = new JLabel("Poids : " + saisiepoids);
+          anglechoisi = new JLabel("Poids : " + saisieangle); 
+          forcechoisie = new JLabel("Force : " + saisieforce);
           
           JPanel topbis = new JPanel();
           topbis.add(ventchoisi);
@@ -153,6 +154,7 @@ public class Barre extends JPanel {
     class VentItem implements ItemListener{
       public void itemStateChanged(ItemEvent choixvent) { //permet d’afficher les choix effectués
         System.out.println("Le choix du vent est : " + choixvent.getItem()); 
+        saisie2vent = (String) choixvent.getItem(); //paramétrage de la variable saisie2vent
      }
     }
     class PlaneteItem implements ItemListener{
