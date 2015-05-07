@@ -36,7 +36,6 @@ public class Fenetre extends JFrame {
         cttpane.setLayout(new BorderLayout());
         cttpane.add(barre,BorderLayout.SOUTH);
         cttpane.add(panneau,BorderLayout.CENTER);
-        cttpane.add(barrebis,BorderLayout.NORTH);
         
         this.setContentPane(cttpane);
         
